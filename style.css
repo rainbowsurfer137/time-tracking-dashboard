@@ -36,6 +36,10 @@ body {
   font-family: "Rubik", sans-serif;
   background-color: var(--navy-950);
   color: var(--white);
+  display: grid;
+  place-items: center;
+  margin: 0;
+  min-height: 100vh;
 }
 
 /* Dashboard */
@@ -43,9 +47,10 @@ body {
 .dashboard {
   display: grid;
   grid-template-columns: 1fr;
-  place-content: center;
+
   padding: 1.5rem;
   gap: 1.5rem;
+  margin-inline: auto;
 }
 
 /* User Profile Card */
@@ -250,6 +255,11 @@ body {
     grid-column: span 3;
   }
 
+  .profile__header {
+    justify-items: start;
+    grid-template-columns: auto 1fr;
+  }
+
   .card__time-row {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
@@ -269,19 +279,37 @@ body {
   .profile__header {
     grid-template-columns: 1fr;
     justify-items: start;
+    max-width: 15.9375rem;
+    gap: 3rem;
   }
+
+  .profile__header img {
+    align-self: end;
+  }
+
   .profile__text h1 {
     white-space: normal;
+    font-size: 2.5rem;
   }
+
   .profile__filters {
     grid-template-columns: 1fr;
     justify-items: start;
     padding: 2rem;
+    gap: 1rem;
+  }
+
+  .profile__filters button {
+    margin-top: 0;
   }
 
   .card__time-row {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     justify-self: start;
+  }
+
+  .card__info {
+    min-height: 12.5rem;
   }
 }
