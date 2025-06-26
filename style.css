@@ -24,6 +24,7 @@
   --fs-h1: 1.5rem;
   --fs-p: 1.125rem;
   --fs-xs: 0.9375rem;
+  --fs-xl: 3.5rem;
 }
 
 * {
@@ -194,6 +195,7 @@ body {
 .card__info {
   display: grid;
   padding: 1.5rem;
+  min-width: 20.4375rem;
   background-color: var(--navy-900);
   border-radius: 0.9375rem;
   gap: 1rem;
@@ -246,7 +248,7 @@ body {
 
 /* Media Queries */
 
-@media (650px <= width <= 850px) {
+@media (min-width: 650px) and (max-width: 850px) {
   .dashboard {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -265,9 +267,13 @@ body {
     grid-template-rows: auto auto;
     justify-self: start;
   }
+
+  .card__hours {
+    font-size: var(--fs-xl);
+  }
 }
 
-@media (850px < width) {
+@media (min-width: 851px) {
   .dashboard {
     grid-template-columns: repeat(4, minmax(0, 255px));
   }
@@ -311,5 +317,9 @@ body {
 
   .card__info {
     min-height: 12.5rem;
+  }
+
+  .card__hours {
+    font-size: var(--fs-xl);
   }
 }
